@@ -1,0 +1,28 @@
+[package]
+name = "template"
+version = "0.1.0"
+authors = ["Geist Development <brandon@geistdevelopment.com>"]
+description = """
+Template project with design patterns to be forked used on larger projects.
+"""
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+bench = false
+path = "crates/core/main.rs"
+name = "geist"
+
+[[test]]
+name = "integration"
+path = "tests/tests.rs"
+
+[workspace]
+members = [
+  "crates/utils",
+]
+
+[dependencies]
+utils = { version = "0.1.0", path = "crates/utils" }
+log = "0.4.17"
